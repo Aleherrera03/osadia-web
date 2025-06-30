@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OSADÍA – Estilista Virtual IA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Reset y variables */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    :root {
+      --bg: #f8f5f0;
+      --text: #111;
+      --primary: #111;
+      --accent: #e6c370;
+      --light: #fff;
+    }
+    body, html { width:100%; height:100%; font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+
+    /* Navbar */
+    header { position:fixed; top:0; left:0; width:100%; background:rgba(248,245,240,0.95); backdrop-filter:blur(10px); padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; z-index:1000; }
+    header h1 { font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--primary); }
+    nav ul { display:flex; list-style:none; }
+    nav li { margin-left:2rem; }
+    nav a { text-decoration:none; color:var(--text); font-weight:600; transition:color .3s; }
+    nav a:hover { color:var(--accent); }
+
+    /* Spacer para el header fijo */
+    .spacer { height:80px; }
+
+    /* Hero */
+    .hero { min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:0 1rem; }
+    .hero-content { max-width:600px; }
+    .hero h2 { font-family:'Playfair Display',serif; font-size:3rem; margin-bottom:1rem; color:var(--primary); }
+    .hero p { font-size:1.1rem; margin-bottom:2rem; }
+    .btn-primary { background:var(--accent); color:var(--light); padding:.75rem 1.5rem; border:none; border-radius:6px; font-size:1rem; cursor:pointer; transition:background .3s; font-weight:600; text-decoration:none; }
+    .btn-primary:hover { background:#d4b559; }
+
+    /* Features */
+    .features { padding:4rem 1rem; max-width:1000px; margin:auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem; }
+    .feature-card { background:var(--light); padding:2rem; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.05); text-align:center; }
+    .feature-card h3 { font-family:'Playfair Display',serif; margin-bottom:.5rem; color:var(--primary); }
+    .feature-card p { font-size:.95rem; }
+
+    /* Chat embed */
+    .chat-embed { padding:2rem 1rem; max-width:800px; margin:auto; }
+    .chat-embed iframe { width:100%; height:500px; border:none; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,.1); }
+
+    /* Signup (Google Form) */
+    #signup { padding:4rem 1rem; max-width:800px; margin:auto; }
+    #signup h2 { font-family:'Playfair Display',serif; text-align:center; margin-bottom:1.5rem; color:var(--primary); }
+    #signup .form-container { background:var(--light); padding:2rem; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.05); }
+    #signup iframe { width:100%; height:700px; border:none; }
+
+    /* Footer */
+    footer { background:var(--primary); color:var(--light); text-align:center; padding:2rem 1rem; margin-top:4rem; }
+    footer p { font-size:.85rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>OSADÍA</h1>
+    <nav>
+      <ul>
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#features">¿Qué hace?</a></li>
+        <li><a href="#chat">Interactúa</a></li>
+        <li><a href="#signup">Acceso</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="spacer"></div>
+
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h2>Tu estilista virtual por IA</h2>
+      <p>Recomendaciones de outfits, consejos de dresscode y refuerzo de tu confianza corporal con empatía y estilo.</p>
+      <a href="#signup" class="btn-primary">Solicitar acceso anticipado</a>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <div class="feature-card">
+      <h3>Outfits Personalizados</h3>
+      <p>Recibe looks completos adaptados a tu cuerpo, presupuesto y ocasión.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Guía de Dresscode</h3>
+      <p>Instrucciones claras para vestir según la ocasión: bodas, citas, entrevistas.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Cambio de Estilo</h3>
+      <p>Consejos para renovar tu imagen y probar nuevos estilos con confianza.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Body-Positive</h3>
+      <p>Lenguaje inclusivo y motivador para que te sientas bien en cada prenda.</p>
+    </div>
+  </section>
+
+  <section id="chat" class="chat-embed">
+    <iframe src="https://chat.openai.com/embed/gpts/YOUR_GPT_ID" title="OSADÍA Chat"></iframe>
+  </section>
+
+  <section id="signup">
+    <h2>Solicita tu acceso anticipado</h2>
+    <div class="form-container">
+      <iframe src="https://docs.google.com/forms/d/e/1wdvA_cic7rMfE-HXVRX-lrcqh5RVQg5cgpAepf6_AoA/viewform?embedded=true" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 OSADÍA – Diseñado con estilo y empatía | Contacto: osadia@gpt.app</p>
+  </footer>
+</body>
+</html>
