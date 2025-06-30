@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     /* Reset y variables */
-    * { margin:0; padding:0; box-sizing:border-box }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
       --bg: #f8f5f0;
       --text: #111;
@@ -16,82 +16,141 @@
       --light: #fff;
     }
     body, html {
-      width:100%; height:100%;
-      font-family:'Inter',sans-serif;
-      background:var(--bg); color:var(--text);
-      line-height:1.6;
+      width: 100%; height: 100%;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
+
+    /* Navbar */
     header {
-      position:fixed; top:0; left:0; width:100%;
-      background:rgba(248,245,240,0.95);
-      backdrop-filter:blur(10px);
-      padding:1rem 2rem;
-      display:flex; justify-content:space-between; align-items:center;
-      z-index:1000;
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: rgba(248, 245, 240, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      z-index: 1000;
     }
     header h1 {
-      font-family:'Playfair Display',serif;
-      font-size:1.5rem; color:var(--primary);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--primary);
     }
-    nav ul { display:flex; list-style:none; }
-    nav li { margin-left:2rem; }
+    nav ul { display: flex; list-style: none; }
+    nav li { margin-left: 2rem; }
     nav a {
-      text-decoration:none; color:var(--text);
-      font-weight:600; transition:color .3s;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      transition: color 0.3s;
     }
-    nav a:hover { color:var(--accent); }
-    .spacer { height:80px; }
+    nav a:hover { color: var(--accent); }
 
+    /* Spacer para header fijo */
+    .spacer { height: 80px; }
+
+    /* Hero */
     .hero {
-      min-height:100vh; display:flex;
-      align-items:center; justify-content:center;
-      text-align:center; padding:0 1rem;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 1rem;
     }
-    .hero-content { max-width:600px; }
+    .hero-content { max-width: 600px; }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
     .hero h2 {
-      font-family:'Playfair Display',serif;
-      font-size:3rem; margin-bottom:1rem;
-      color:var(--primary);
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
     }
-    .hero p { font-size:1.1rem; margin-bottom:2rem; }
+    .hero p { font-size: 1.1rem; margin-bottom: 2rem; }
     .btn-primary {
-      background:var(--accent); color:var(--light);
-      padding:.75rem 1.5rem; border:none; border-radius:6px;
-      font-size:1rem; cursor:pointer; transition:background .3s;
-      font-weight:600; text-decoration:none;
+      background: var(--accent);
+      color: var(--light);
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-weight: 600;
+      text-decoration: none;
     }
-    .btn-primary:hover { background:#d4b559; }
+    .btn-primary:hover { background: #d4b559; }
 
+    /* Features */
     .features {
-      padding:4rem 1rem; max-width:1000px; margin:auto;
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:2rem;
+      padding: 4rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
     }
     .feature-card {
-      background:var(--light); padding:2rem;
-      border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.05);
-      text-align:center;
+      background: var(--light);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      text-align: center;
     }
     .feature-card h3 {
-      font-family:'Playfair Display',serif;
-      margin-bottom:.5rem; color:var(--primary);
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
     }
-    .feature-card p { font-size:.95rem; }
+    .feature-card p { font-size: 0.95rem; }
 
+    /* Chat embed */
     .chat-embed {
-      padding:2rem 1rem; max-width:800px; margin:auto;
+      padding: 2rem 1rem;
+      max-width: 800px;
+      margin: auto;
     }
     .chat-embed iframe {
-      width:100%; height:500px;
-      border:none; border-radius:8px;
-      box-shadow:0 4px 12px rgba(0,0,0,.1);
+      width: 100%; height: 500px;
+      border: none; border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    footer {
-      background:var(--primary); color:var(--light);
-      text-align:center; padding:2rem 1rem; margin-top:4rem;
+    /* Signup (Google Form) */
+    #signup {
+      padding: 4rem 1rem;
+      max-width: 800px;
+      margin: auto;
     }
-    footer p { font-size:.85rem; }
+    #signup h2 {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
+    .form-container {
+      background: var(--light);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .form-container iframe { width: 100%; height: 700px; border: none; }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: var(--light);
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+    }
+    footer p { font-size: 0.85rem; }
   </style>
 </head>
 <body>
@@ -110,6 +169,7 @@
 
   <section id="hero" class="hero">
     <div class="hero-content">
+      <div class="hero-title">OSADÍA</div>
       <h2>Tu estilista virtual por IA</h2>
       <p>Recomendaciones de outfits, consejos de dresscode y refuerzo de tu confianza corporal con empatía y estilo.</p>
     </div>
@@ -138,9 +198,18 @@
     <iframe src="https://chat.openai.com/embed/gpts/YOUR_GPT_ID" title="OSADÍA Chat"></iframe>
   </section>
 
+  <section id="signup">
+    <h2>Solicita tu acceso anticipado</h2>
+    <div class="form-container">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdNc9rKdCIyI5cLLQGyxDWqgie6G3vlafxo8G6b6vZuZ0m_fw/viewform?embedded=true"
+        width="100%" height="872" frameborder="0" marginheight="0" marginwidth="0"
+      >Cargando…</iframe>
+    </div>
+  </section>
+
   <footer>
     <p>&copy; 2025 OSADÍA – Diseñado con estilo y empatía | Contacto: osadia@gpt.app</p>
   </footer>
 </body>
 </html>
-
